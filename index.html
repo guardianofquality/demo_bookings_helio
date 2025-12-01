@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hemalata Health Camp – Testing Slip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS file -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JS file (defer so it runs after HTML is loaded) -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-main">
+      <h1>HEMALATA PATHOLABS AND HEALTHCARE</h1>
+      <p>36 YEARS OF EXCELLENT DIAGNOSIS</p>
+      <p>(MSME Rgd No. UDYAM-OD-04-0032080 | TL Regd No. TL/BRG/2025-07-14/067771)</p>
+      <p>1st Floor, Haji Latif Khan Complex, Beside Gul Restaurant, Bhatli Chhowk</p>
+      <p>Contact: 9937 479 629, 06646-256 900</p>
+    </div>
+    <div class="header-meta">
+      <div class="field-inline">
+        <label for="slNo">SL. NO.</label>
+        <!-- Auto-filled, read-only -->
+        <input type="text" id="slNo" name="slNo" readonly />
+      </div>
+      <div class="field-inline">
+        <label for="date">Date</label>
+        <!-- JS sets today + min=today (no past), can change to future -->
+        <input type="date" id="date" name="date" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <form id="campForm">
+      <section class="card">
+        <h2>Patient Details</h2>
+
+        <div class="grid-2">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="0" max="120" />
+          </div>
+
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="contact">Contact No.</label>
+            <input type="tel" id="contact" name="contact" />
+          </div>
+
+          <div class="field full-width">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="2"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" step="0.1" id="weight" name="weight" />
+          </div>
+
+          <div class="field">
+            <label for="height">Height (cm)</label>
+            <input type="number" step="0.1" id="height" name="height" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Basic Screening</h2>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="bp">Blood Pressure (mmHg)</label>
+            <input type="text" id="bp" name="bp" placeholder="e.g. 120/80" />
+            <small>Normal: 120/80 mmHg</small>
+          </div>
+        </div>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="hb">Hemoglobin (g/dL)</label>
+            <input type="number" step="0.1" id="hb" name="hb" />
+            <small>Normal: M 13–17, F 12–15</small>
+          </div>
+        </div>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="bmi">BMI</label>
+            <input type="number" step="0.1" id="bmi" name="bmi" readonly />
+            <small>Normal: 18.5–24.9</small>
+          </div>
+        </div>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="spo2">SpO₂ (%)</label>
+            <input type="number" step="0.1" id="spo2" name="spo2" />
+            <small>Normal: 95–100%</small>
+          </div>
+        </div>
+
+        <div class="screening-row grid-2">
+          <div class="field">
+            <label for="bloodGroup">Blood Group</label>
+            <input type="text" id="bloodGroup" name="bloodGroup" placeholder="e.g. A+, O−" />
+          </div>
+          <div class="field">
+            <label for="rhType">Rh Type</label>
+            <input type="text" id="rhType" name="rhType" />
+          </div>
+        </div>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="bloodSugar">Blood Sugar (RBS/FBS)</label>
+            <input type="number" step="0.1" id="bloodSugar" name="bloodSugar" />
+            <small>FBS: 70–100 mg/dL, RBS &lt; 140 mg/dL</small>
+          </div>
+        </div>
+
+        <div class="screening-row">
+          <div class="field">
+            <label for="ppbs">PPBS – 2 Hrs (mg/dL)</label>
+            <input type="number" step="0.1" id="ppbs" name="ppbs" />
+            <small>Normal: 110–150 mg/dL</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Doctor’s Notes / Advice</h2>
+        <div class="field">
+          <label for="doctorsNotes">Notes</label>
+          <textarea id="doctorsNotes" name="doctorsNotes" rows="4"></textarea>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Recommended Tests</h2>
+        <div class="field">
+          <label for="test1">Test 1</label>
+          <input type="text" id="test1" name="test1" />
+        </div>
+        <div class="field">
+          <label for="test2">Test 2</label>
+          <input type="text" id="test2" name="test2" />
+        </div>
+      </section>
+
+      <section class="card signatures">
+        <div class="field">
+          <label for="doctorSign">Doctor’s Name / Signature</label>
+          <input type="text" id="doctorSign" name="doctorSign" />
+        </div>
+        <div class="field">
+          <label for="techSign">Technician’s Name / Signature</label>
+          <input type="text" id="techSign" name="techSign" />
+        </div>
+      </section>
+
+      <p class="note">PS – Not for medico legal purpose</p>
+
+      <div class="actions">
+        <button type="submit">Save / Submit</button>
+        <button type="reset" class="secondary">Clear</button>
+      </div>
+
+      <!-- Booking confirmation message -->
+      <div id="successMessage" class="success-message" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    HEALTH CHECK-UP CAMP – TESTING SLIP
+  </footer>
+</body>
+</html>
